@@ -37,13 +37,30 @@ var jsOne = "Modify markup only without touching JavaScript so the click on each
     },
     anchorScroll: function () {
       'use strict';
-      $('[href^="#"]').click(function (event) {
+      $('[href^="#"]').unbind('click').click(function (event) {
         event.preventDefault();
         var speed = 100,
-          easing = 'swing';
+          easing = 'swing',
+          scrollTarget = this.hash;
         speed = parseInt($(this).attr('data-scroll-speed'), 10);
         easing = $(this).attr('data-easing-type');
-        $('html,body').animate({ scrollTop: $(this.hash).offset().top }, speed, easing);
+        if ($(scrollTarget).length) {
+          $('html,body').animate({ scrollTop: $(scrollTarget).offset().top }, speed, easing);
+        }
+        else {
+          while(!$(scrollTarget).length && scrollTarget.length > 1) {
+            scrollTarget = scrollTarget.split('-');
+            scrollTarget.splice(0, 1);
+            scrollTarget = scrollTarget.join('-');
+            scrollTarget = '#' + scrollTarget;
+          }
+          if($(scrollTarget).length) {
+            $('html,body').animate({ scrollTop: $(scrollTarget).offset().top }, speed, easing);
+          }
+          else {
+            console.log('Scroll target ' + this.hash + ' not found!');
+          }
+        }
       });
     }
   };
