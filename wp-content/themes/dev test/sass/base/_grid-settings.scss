@@ -1,0 +1,26 @@
+@import "../neat/neat-helpers";
+
+// Neat Overrides
+// $column: 90px;
+$gutter: 6em;
+// $grid-columns: 12;
+// $max-width: 1200px;
+
+// Breakpoints
+$tiny-screen: em(320);
+$small-screen: em(360);
+$mobile-screen: em(480);
+$medium-screen: em(640);
+$tablet-screen: em(768);
+$tablet-l-screen: em(980);
+$large-screen: em(1024);
+
+$full-width: em(1200); //declared in ems because of full page scaling on x-large screens
+$max-width: $full-width; //max and full are the same, here for convenience
+
+$x-large-screen: em(1280);
+$xx-large-screen: em(1440);
+$xxx-large-screen: em(1600);
+
+$medium-screen-up: new-breakpoint(min-width $medium-screen 4);
+$large-screen-up: new-breakpoint(min-width $large-screen 8);

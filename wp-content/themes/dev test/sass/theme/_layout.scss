@@ -1,0 +1,51 @@
+//grid-defining classes
+
+.container {
+  position: relative;
+  @include outer-container();
+  max-width: $max-width;
+  padding: 3em;
+  border-radius: em(3);
+  
+  section:not(.hero) & {
+    background: $white;
+  }
+}
+
+.content-container {
+  position: relative;
+  @include outer-container();
+  max-width: $max-width;
+  padding: 3.5em;
+  border-radius: em(3);
+  
+  section:not(.hero) & {
+    background: $white;
+  }
+}
+
+@include media($medium-screen) {
+  .span-1 { @include span-columns(1); }
+  .span-2 { @include span-columns(2); }
+  .span-3 { @include span-columns(3); }
+  .span-4 { @include span-columns(4); }
+  .span-45 { 
+    @include span-columns(4.5); 
+    max-width: auto;
+  }
+  .span-5 { @include span-columns(5); }
+  .span-6 { 
+    @include span-columns(6); 
+
+    .grid & {
+      @include omega(2n);
+    }
+  }
+  .span-7 { @include span-columns(7); }
+  .span-75 { @include span-columns(7.5); }
+  .span-8 { @include span-columns(8); }
+  .span-9 { @include span-columns(9); }
+  .span-10 { @include span-columns(10); }
+  .span-11 { @include span-columns(11); }
+  .span-12 { @include span-columns(12); }
+}

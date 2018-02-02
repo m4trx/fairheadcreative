@@ -1,0 +1,111 @@
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $dark-gray;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: em(30);
+  text-align: center;
+
+  @include media($medium-screen) {
+    font-size: em(36);
+  }
+}
+
+h2 {
+  font-size: em(28);
+  letter-spacing: -0.02em;
+  margin: .5em 0 1.5em;
+  text-align: center;
+
+  @include media($medium-screen) {
+    font-size: em(32);
+  }
+  
+  .title-under {
+    display: block;
+    color: lighten($dark-gray, 50);
+    font-size: em(16, 32);
+    font-weight: 300;
+  }
+}
+
+h3 {
+  font-size: em(28);
+  margin: em(24, 28) 0;
+}
+
+p {
+  margin: 0 0 em(16);
+  font-weight: 400;
+  
+  h1 + & {
+    font-size: em(20);
+    font-weight: 300;
+  }
+  
+  .hero & {
+    max-width: 560px;
+    margin: 0 auto em(46);
+    
+    &:nth-last-child(2) {
+      text-align: center;
+    }
+  }
+  
+  .hero-home & {
+    max-width: 560px;
+    margin: 0 auto em(16);
+    
+    &:nth-last-child(2) {
+      text-align: center;
+    }
+  }
+  
+  .content-css & {
+    text-align: left;
+  }
+  
+  .content-js & {
+    max-width: 360px;
+    margin: 0 auto 3em;
+  }
+}
+
+a {
+  color: $red;
+  text-decoration: none;
+  transition: all .3s;
+  
+  &:hover {
+    color: lighten($red, 15);
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}

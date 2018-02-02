@@ -1,0 +1,166 @@
+//typography helpers
+
+.caps { text-transform: uppercase; }
+
+//text alignment
+
+.txt-left { text-align: left; }
+.txt-center { text-align: center; }
+.txt-right { text-align: right; }
+
+//floats
+.right { float: right !important; }
+.left { float: left !important; }
+.right-soft { float: right; }
+.left-soft { float: left; }
+
+//display overrides
+.block { display: block !important; }
+.inblock { display: inline-block !important; }
+.hide { display: none !important; }
+.hide-soft { display: none; }
+.transparent { opacity: 0; }
+
+//line breaks for various screen widths
+.small-screen-hide,
+.mobile-screen-hide,
+.medium-screen-hide,
+.tablet-screen-hide,
+.tablet-l-screen-hide,
+.large-screen-hide,
+.x-large-screen-hide,
+.xx-large-screen-hide,
+.xxx-large-screen-hide,
+.small-screen-show,
+.mobile-screen-show,
+.medium-screen-show,
+.tablet-screen-show,
+.tablet-l-screen-show,
+.large-screen-show,
+.x-large-screen-show,
+.xx-large-screen-show,
+.xxx-large-screen-show {
+  display: none;
+}
+
+.small-screen-hide {
+  @include media($small-screen) {
+    display: inline-block;
+  }
+}//hidden up to small screens, show over 360px
+
+.small-screen-show {
+  @include media(max-width ($small-screen - em(1))) {
+    display: inline-block;
+  }
+}//show on small screens under 360px
+
+.mobile-screen-hide {
+  @include media($mobile-screen) {
+    display: inline-block;
+  }
+}//hidden up to mobile screens, show over 480px
+
+.mobile-screen-show {
+  @include media(max-width ($mobile-screen - em(1))) {
+    display: inline-block;
+  }
+}//show on screens under 480px
+
+.medium-screen-hide {
+  @include media($medium-screen) {
+    display: inline-block;
+  }
+}//hidden up to medium screens, show over 640px
+
+.medium-screen-show {
+  @include media(max-width ($medium-screen - em(1))) {
+    display: inline-block;
+  }
+}//show on screens under 640px
+
+.tablet-screen-hide {
+  @include media($tablet-screen) {
+    display: inline-block;
+  }
+}//hidden up to tablet screens, show over 768px
+
+.tablet-screen-show {
+  @include media(max-width ($tablet-screen - em(1))) {
+    display: inline-block;
+  }
+}//show on screens under 768px
+
+.tablet-l-screen-hide {
+  @include media($tablet-l-screen) {
+    display: inline-block;
+  }
+}//hidden up to large tablet screens, show over 980px
+
+.tablet-l-screen-show {
+  @include media(max-width ($tablet-l-screen - em(1))) {
+    display: inline-block;
+  }
+}//show under 980px
+
+.large-screen-hide {
+  @include media($large-screen) {
+    display: inline-block;
+  }
+}//hidden up to large screens, show over 1024px
+
+.large-screen-show {
+  @include media(max-width ($large-screen - em(1))) {
+    display: inline-block;
+  }
+}//show under 1024px
+
+.x-large-screen-hide {
+  @include media($x-large-screen) {
+    display: inline-block;
+  }
+}//hidden up to x-large screens, show over 1280px
+
+.x-large-screen-show {
+  @include media(max-width ($x-large-screen - em(1))) {
+    display: inline-block;
+  }
+}//show under 1280px
+
+.xx-large-screen-hide {
+  @include media($xx-large-screen) {
+    display: inline-block;
+  }
+}//hidden up to xx-large screens, show over 1440px
+
+.xx-large-screen-show {
+  @include media(max-width ($xx-large-screen - em(1))) {
+    display: inline-block;
+  }
+}//show under 1440px
+
+.xxx-large-screen-hide {
+  @include media($xxx-large-screen) {
+    display: inline-block;
+  }
+}//hidden up to xxx-large screens, show over 1600px
+
+.xxx-large-screen-show {
+  @include media(max-width ($xxx-large-screen - em(1))) {
+    display: inline-block;
+  }
+}//show under 1600px
+
+//positioning
+.absolute { position: absolute; }
+.relative { position: relative; }
+.fixed-bottom {
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+}
+
+//togglers
+.content-hidden {
+  overflow: hidden;
+}
