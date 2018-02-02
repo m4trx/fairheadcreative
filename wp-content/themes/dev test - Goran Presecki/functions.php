@@ -8,20 +8,29 @@
 
 function helipad_styles() {
 
-    wp_enqueue_style( 'screen', get_stylesheet_directory_uri() . '/css/screen.css', false, filemtime(get_stylesheet_directory() . '/css/screen.css'));
+    wp_enqueue_style( 'screen', get_stylesheet_directory_uri() . '/css/screen.css', false, filemtime(get_stylesheet_directory() . '/css/screen.css') );
 
 }
 add_action( 'wp_enqueue_scripts', 'helipad_styles' );
 
 function helipad_scripts() {
 
-  $ver = "v" . filemtime( get_template_directory().'/js/production.min.js' );
+  $ver = "v" . filemtime( get_template_directory() . '/js/production.min.js' );
 
-    wp_register_script('production-min-js', get_template_directory_uri() . '/js/production.min.js',  array('jquery') , $ver,  true);
-    wp_enqueue_script('production-min-js');
+    wp_register_script( 'production-min-js', get_template_directory_uri() . '/js/production.min.js', array('jquery'), $ver, true );
+    wp_enqueue_script( 'production-min-js' );
 
 }
-add_action('wp_enqueue_scripts', 'helipad_scripts');
+add_action( 'wp_enqueue_scripts', 'helipad_scripts' );
+
+// Remove all classes except home class
+function wpse_edit_body_classes() {
+  add_filter( 'body_class', 'wpse_remove_classes' );
+}
+function wpse_remove_classes( $classes ) {
+  return array( 'home' );
+}
+add_action( 'wp_head', 'wpse_edit_body_classes' );
 
 // Remove stock WP footer Message
 function wpse_edit_footer() {
