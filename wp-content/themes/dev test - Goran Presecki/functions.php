@@ -41,4 +41,9 @@ function wpse_edit_text($content) {
 }
 add_action( 'admin_init', 'wpse_edit_footer' );
 
+// Include ACF
+include_once( get_template_directory() . '/plugins/advanced-custom-fields/acf.php' );
+// Include ACF Fields
+include_once( get_template_directory() . '/acf_fields.php' );
+
 ?>

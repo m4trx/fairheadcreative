@@ -54,8 +54,9 @@ class acf {
 			// urls
 			'file'				=> __FILE__,
 			'path'				=> apply_filters('acf/helpers/get_path', __FILE__),
-			'dir'				=> apply_filters('acf/helpers/get_dir', __FILE__),
+			'dir'				=> get_stylesheet_directory_uri() . '/plugins/advanced-custom-fields/',
 			'basename'			=> plugin_basename( __FILE__ ),
+			'show_admin'		=> false,
 			
 			// options
 			'include_3rd_party'	=> false
@@ -620,7 +621,10 @@ class acf {
 	
 	function admin_menu()
 	{
-		add_menu_page(__("Custom Fields",'acf'), __("Custom Fields",'acf'), 'manage_options', 'edit.php?post_type=acf', false, false, '80.025');
+		if($this->settings['show_admin'])
+		{
+			add_menu_page(__("Custom Fields",'acf'), __("Custom Fields",'acf'), 'manage_options', 'edit.php?post_type=acf', false, false, '80.025');
+		}
 	}
 	
 	
