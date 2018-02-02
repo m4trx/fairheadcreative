@@ -20,7 +20,7 @@ Thumbs.db
 .master
 
 # Ignore everything in the root except ...
-#/*
+/*
 !.gitignore
 !wp-content/
 !Gemfile
@@ -28,12 +28,12 @@ Thumbs.db
 !humans.txt
 
 # Ignore everything in the "wp-content" directory, except ...
-#wp-content/*
+wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
  
 # Ignore everything in the "plugins" directory, except ...
-#wp-content/plugins/*
+wp-content/plugins/*
 
 # Ignore node (win filename issues)
-#wp-content/themes/dev test/node_modules
+wp-content/themes/dev test/node_modules
