@@ -32,6 +32,12 @@ function wpse_remove_classes( $classes ) {
 }
 add_action( 'wp_head', 'wpse_edit_body_classes' );
 
+// Remove title field from edit page
+function remove_title_field() {
+  remove_post_type_support('page', 'title');
+}
+add_action( 'init', 'remove_title_field' );
+
 // Remove stock WP footer Message
 function wpse_edit_footer() {
   add_filter( 'admin_footer_text', 'wpse_edit_text', 11 );
