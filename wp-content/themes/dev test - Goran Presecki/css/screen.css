@@ -843,4 +843,27 @@ footer {
   .overlay-test.is-active {
     display: block; }
 
+.modal {
+  text-align: center;
+  padding: 0 !important; }
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; }
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle; }
+
+.modal .btn-primary {
+  background-color: #66ff66; }
+
+#modal ul {
+  list-style-type: circle;
+  list-style-position: inside; }
+
 /*# sourceMappingURL=screen.css.map */
