@@ -1,0 +1,30 @@
+// vertical center
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+// green color for OK button
+.modal .btn-primary {
+  background-color: #66ff66;
+}
+
+// bullet display checked elements in modal
+#modal ul {
+  list-style-type: circle;
+  list-style-position: inside;
+}

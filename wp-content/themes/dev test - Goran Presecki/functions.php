@@ -9,6 +9,7 @@
 function helipad_styles() {
 
     wp_enqueue_style( 'screen', get_stylesheet_directory_uri() . '/css/screen.css', false, filemtime(get_stylesheet_directory() . '/css/screen.css') );
+    wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', false, filemtime(get_stylesheet_directory() . '/css/bootstrap.min.css') );
 
 }
 add_action( 'wp_enqueue_scripts', 'helipad_styles' );
