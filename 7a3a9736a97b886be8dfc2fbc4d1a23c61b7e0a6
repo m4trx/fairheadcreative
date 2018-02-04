@@ -1,0 +1,48 @@
+1.)
+CSS Part One: I've changed header class name from 'hero' to 'hero-home' and changed section-css.php indentation
+CSS Part Two: -
+CSS Part Three: -
+
+JS Part One: Added  data-scroll-speed="1200" to main navigation buttons
+
+JS Part Two: Target element doesn't exist, so I inserted code to test if element exist before scrolling to it. If element doesn't exist then script will loop while trying to find existing target by splitting target name with '-' and removing first element of array. If target is not found at all then console will display message 'Scroll target ' + this.hash + ' not found!'
+
+JS Part Three: Solved first by activating GSAP animation that doesn't depent on scroll, but couldn't match arrow button to identically follow scroll. After I removed GSAP plugin and started only scrollMagic which is disabled on init, and reenable it only when someone clicks arrow button. At same time when someone clicks button script moves triggerHook on mouse position (~). When scrollMagic scene ends all tetris elements and pin fadeOut.
+
+PHP Part One: I made hook on wp_head action that calls function which returns only 'home' class in array. I could've make whitelist functionality, but in this case this is more optimised.
+
+PHP Part Two: First I wasn't sure do I have to use ACL plugin or just make custom fields. I started creating custom fields in functions.php, and planed to insert for bonus box where you could enter custom number of checkbox 'lines' to appear, but after emailing you I checked ACL plugin again and saw it has export option - so easy :) I added to theme folder plugins and copied advanced-custom-fields plugin there. Using wp-admin I generated fields and inserted them in acf_fields.php which I included into functions.php. When testing WP directly on domain like posao.com then it would work, but when testing WP inside folder on domain like posao.com/wordpress/ then backend was returning wrong paths (full path from system root like /var/www/vho... ). To fix that 404 problem I changed settings in acf.php giving it proper 'dir'. I also created another setting called 'show_admin' (just like in PRO version) and set it to false, so client doens't see ACL menu.
+
+PHP Part Three: I added boostrap js and css, later I edited bootstrap.css because it was messing with page design, left only with modal classes and moved it to _modal.scss. When user clicks submit button javascript cancels submission, finds :checked elements, appends them to modals <ul> and pops modal message. If OK is clicked then javascript unbinds onSubmit and submits form. PHP on site initialy displays options from original test (with option 1 checked by default :)) When user edit options and checkboxes, PHP replicates it on frontpage. When user submit his options, PHP checks submitted options on frontpage.
+
+Extra: I also removed line from header.php that includes production.min.js because it was included in functions.php also so site was loading it two times.
+
+2.) Assuming that client is probably not GIT friendly
+
+Installation:
+Step 1.
+Download theme from following link: 'http://presecki.com/dev test - Goran Presecki.zip'
+Unzip file contents to your Wordpress /wp-content/themes/ folder
+
+Step 2.
+Login to /wp-admin/ and from menu select: Apperenace -> Themes
+Activate theme 'Farihead Creative Developers Test - Goran Presečki'
+
+Step 3.
+From menu select: Settings -> Reading
+For option 'Your homepage displays' select 'A static page', and for Homepage select 'Sample Page'
+Save changes and enjoy!
+
+3.) I like test, but I expected backend part to be little harder, when I saw PHP Part two and googled ACL, I thought - nah, we must code, not just download plugin :) Later when I sent you e-mail I realised from your answer ACL fields through plugin is what you want.
+
+4.) Contact details:
+Firstname: Goran
+Lastname: Presečki
+Skype: m4trxxx
+E-mail: goran.presecki@gmail.com
+Location: Šibenik, Croatia
+Timezone: CET
+Preferred working hours: 09:00 - 17:00
+Max working hours weekly: 70
+
+I'm very flexible and can adjust, I have no problem working extra hours, saturdays and sundays when and if needed
