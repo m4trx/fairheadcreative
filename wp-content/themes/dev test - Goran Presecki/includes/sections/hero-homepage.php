@@ -1,4 +1,4 @@
-<header class="hero">
+<header class="hero-home">
   <div class="container">
     <h1>Welcome to FC dev test!</h1>
     <p>Access the part you want to work on by clicking the appropriate button</p>
