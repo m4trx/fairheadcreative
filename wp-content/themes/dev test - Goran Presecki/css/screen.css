@@ -772,7 +772,7 @@ body > header {
       width: 56px;
       background: #E54B4B;
       position: absolute;
-      left: calc(50% - 28px);
+      left: calc(50% - 28px) !important;
       color: #fff;
       font-size: 2em; }
       .content-js .container .tertis-block a:hover,

@@ -120,7 +120,7 @@ body > header {
       width: 56px;
       background: $red;
       position: absolute;
-      left: calc(50% - 28px);
+      left: calc(50% - 28px) !important;
       color: $white;
       font-size: 2em;
       

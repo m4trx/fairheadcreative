@@ -95,4 +95,22 @@ $(document).ready(function () {
   $('#modal_submit').on('click', function() {
     $('#bonus_form').unbind('submit').submit();
   });
+
+  var controller = new ScrollMagic.Controller();
+  var scene = new ScrollMagic.Scene({
+    triggerElement: '#trigger',
+    duration: 415,
+    offset: 150
+  })
+  .setPin('#pin')
+  .reverse(false)
+  .enabled(false)
+  .addTo(controller)
+  .on("end", function (event) {
+    $('.tetris-block, #pin').fadeOut();
+  });
+
+  $('#pin').on('click', function(event) {
+    scene.triggerHook(event.screenY / $(window).height()).enabled(true);
+  });
 });
