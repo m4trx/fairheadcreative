@@ -28,7 +28,7 @@ var jsOne = "Modify markup only without touching JavaScript so the click on each
     },
     anchorScroll: function () {
       'use strict';
-      $('[href^="#"]').unbind('click').click(function (event) {
+      $('[href^="#"]').click(function (event) {
         event.preventDefault();
         var speed = 100,
           easing = 'swing',
